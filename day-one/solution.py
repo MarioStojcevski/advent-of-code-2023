@@ -26,7 +26,7 @@ def checkIfKeyInString (string):
     return False
 
 def calculate ():
-    lines = open('./input', 'r').readlines()
+    lines = open('input.txt', 'r').readlines()
     numbers = []
     for line in lines:
         firstNumber = ''

@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug day one",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/day-one/solution.py",
+      "stopOnEntry": false,
+      "cwd": "${workspaceFolder}/day-one",
+      "env": {},
+      "internalConsoleOptions": "neverOpen",
+      "args": []
+    },
+    {
+      "name": "Debug day two",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/day-two/solution.py",
+      "stopOnEntry": false,
+      "cwd": "${workspaceFolder}/day-two",
+      "env": {},
+      "internalConsoleOptions": "neverOpen",
+      "args": []
+    },
+  ]
+}

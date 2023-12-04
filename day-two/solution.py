@@ -5,7 +5,7 @@ config = {
 }
 
 def calculate():
-    games = open('./input', 'r').readlines()
+    games = open('input.txt', 'r').readlines()
     result = 0
     for i in range(0, len(games)):
         game = games[i]
