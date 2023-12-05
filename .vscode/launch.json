@@ -23,5 +23,16 @@
       "internalConsoleOptions": "neverOpen",
       "args": []
     },
+    {
+      "name": "Debug day three",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/day-three/solution.py",
+      "stopOnEntry": false,
+      "cwd": "${workspaceFolder}/day-three",
+      "env": {},
+      "internalConsoleOptions": "neverOpen",
+      "args": []
+    },
   ]
 }
