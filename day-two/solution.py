@@ -4,31 +4,48 @@ config = {
     'blue': 14,
 }
 
-def calculate():
+def calculate(isDayTwo):
     games = open('input.txt', 'r').readlines()
     result = 0
+    sumOfPowers = 0
     for i in range(0, len(games)):
         game = games[i]
-        data = game.split(': ')
-        sets = data[1].split('; ')
+        sets = game.split(': ')[1].split('; ')
+        isPossible = False
 
-        isPossible = True
+        fewestBallsInGame = {
+            'red': 0,
+            'green': 0,
+            'blue': 0,
+        }
         for set in sets:
             balls = set.strip().split(', ')
             for ball in balls:
                 ballsNumber = ball.split(' ')[0]
                 ballsColor = ball.split(' ')[1]
-                print(f'{ballsColor}-{ballsNumber}')
-                isPossible = int(ballsNumber) <= config[ballsColor]
 
+                if fewestBallsInGame[ballsColor] < int(ballsNumber):
+                    fewestBallsInGame[ballsColor] = int(ballsNumber)
+
+                if config[ballsColor] >= int(ballsNumber):
+                    isPossible = True
+                else:
+                    isPossible = False
+                    if not isDayTwo: break
+            
+            if not isPossible and not isDayTwo:
+                break
+        sumOfPowers += fewestBallsInGame['red'] * fewestBallsInGame['green'] * fewestBallsInGame['blue']
         if isPossible:
             result += i + 1
                 
-    return result
+    return result, sumOfPowers
 
 def __main__ ():
-    result = calculate()
-    print(result)
+    isDayTwo = False
+    result, sumOfPowers = calculate(isDayTwo)
+    print(f'Sum of game indexes which are possible {result}')
+    print(f'Sum of powers of the fewest balls in each color {sumOfPowers}')
 
 if __name__ == '__main__':
     __main__()
